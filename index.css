@@ -1,0 +1,92 @@
+:root {
+  --background-color: #f8f1e4;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --list-item-negative-color: #ccc;
+  --list-item-active-duration: 5s;
+  --dark-text-color: #2a2a2a;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Didact Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.border-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 96%;
+  height: 96%;
+  border: 0.5px solid var(--dark-text-color);
+  box-shadow: 0 0 10px var(--shadow-color);
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.content-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  max-width: 45%;
+}
+
+.content-list li {
+  border: 0.5px solid var(--dark-text-color);
+  padding: 0.2rem 2rem;
+  margin-bottom: 0.5rem;
+  text-align: right;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.content-list li:hover {
+  border-color: rgba(51, 51, 51, 0.1);
+  transform: scaleX(1.05);
+}
+
+.content-list li:active {
+  animation: negativeColor var(--list-item-active-duration);
+}
+
+@keyframes negativeColor {
+  0%,
+  100% {
+    background-color: transparent;
+    color: inherit;
+  }
+  50% {
+    background-color: var(--list-item-negative-color);
+    color: var(--background-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-list {
+    max-width: 100%;
+  }
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+.icon-link {
+  color: var(--dark-text-color);
+  margin-left: 1rem;
+}
+
+.icon-link:hover {
+  color: var(--dark-text-color);
+}
