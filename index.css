@@ -1,3 +1,4 @@
+/* Variables */
 :root {
   --background-color: #f8f1e4;
   --shadow-color: rgba(0, 0, 0, 0.3);
@@ -6,6 +7,7 @@
   --dark-text-color: #2a2a2a;
 }
 
+/* Base styles */
 body {
   background-color: var(--background-color);
   font-family: "IBM Plex Sans", sans-serif;
@@ -17,19 +19,21 @@ body {
   height: 100vh;
 }
 
+/* Border line */
 .border-line {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 96%;
   height: 96%;
-  border: 0.5px solid var(--dark-text-color);
-  box-shadow: 0 0 10px var(--shadow-color);
-  transform: translate(-50%, -50%);
   padding: 1rem;
   box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  border: 0.5px solid var(--dark-text-color);
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
+/* Content list */
 .content-list {
   list-style: none;
   padding: 0;
@@ -37,16 +41,17 @@ body {
   position: relative;
   width: 100%;
   max-width: 45%;
+  z-index: 2;
 }
 
 .content-list li {
-  border: 0.5px solid var(--dark-text-color);
   padding: 0.2rem 2rem;
   margin-bottom: 0.5rem;
   text-align: right;
-  transition: all 0.3s ease;
   user-select: none;
   font-weight: 500;
+  border: 0.5px solid var(--dark-text-color);
+  transition: all 0.3s ease;
 }
 
 .content-list li:hover {
@@ -71,6 +76,7 @@ body {
   }
 }
 
+/* Media queries */
 @media screen and (max-width: 768px) {
   .content-list {
     max-width: 100%;
@@ -81,6 +87,7 @@ body {
   }
 }
 
+/* Social icons */
 .social-icons {
   position: absolute;
   bottom: 1rem;
@@ -97,6 +104,7 @@ body {
   color: var(--dark-text-color);
 }
 
+/* Icon container */
 .icon-container {
   position: absolute;
   right: 5%;
@@ -104,10 +112,12 @@ body {
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.3s ease, right 0.3s ease;
+  color: var(--dark-text-color);
+  font-size: 8rem;
+  z-index: 1;
 }
 
 .icon-container.active {
   opacity: 1;
   right: 15%;
-  color: var(--dark-text-color);
 }
