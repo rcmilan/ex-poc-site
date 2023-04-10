@@ -109,4 +109,5 @@ body {
 .icon-container.active {
   opacity: 1;
   right: 15%;
+  color: var(--dark-text-color);
 }
