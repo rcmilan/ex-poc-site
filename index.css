@@ -7,7 +7,7 @@
   --dark-text-color: #2a2a2a;
 }
 
-/* Base styles */
+/* Base styles for the body */
 body {
   background-color: var(--background-color);
   font-family: "IBM Plex Sans", sans-serif;
@@ -19,7 +19,7 @@ body {
   height: 100vh;
 }
 
-/* Border line */
+/* Border line around the content */
 .border-line {
   position: absolute;
   top: 50%;
@@ -33,7 +33,7 @@ body {
   box-shadow: 0 0 10px var(--shadow-color);
 }
 
-/* Content list */
+/* Styling for the content list */
 .content-list {
   list-style: none;
   padding: 0;
@@ -44,6 +44,7 @@ body {
   z-index: 2;
 }
 
+/* Styling for individual list items */
 .content-list li {
   padding: 0.2rem 2rem;
   margin-bottom: 0.5rem;
@@ -54,16 +55,19 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Hover effect for list items */
 .content-list li:hover {
   border-color: transparent;
   box-shadow: none;
   transform: scaleX(1.05);
 }
 
+/* Active state animation for list items */
 .content-list li:active {
   animation: negativeColor var(--list-item-active-duration);
 }
 
+/* Keyframes for the active state animation */
 @keyframes negativeColor {
   0%,
   100% {
@@ -76,7 +80,7 @@ body {
   }
 }
 
-/* Media queries */
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
   .content-list {
     max-width: 100%;
@@ -87,7 +91,7 @@ body {
   }
 }
 
-/* Social icons */
+/* Social icons container */
 .social-icons {
   position: absolute;
   bottom: 1rem;
@@ -95,16 +99,18 @@ body {
   font-size: 2rem;
 }
 
+/* Social icon link styling */
 .icon-link {
   color: var(--dark-text-color);
   margin-left: 1rem;
 }
 
+/* Social icon link hover effect */
 .icon-link:hover {
   color: var(--dark-text-color);
 }
 
-/* Icon container */
+/* Icon container for the sliding icons */
 .icon-container {
   position: absolute;
   right: 5%;
@@ -117,6 +123,7 @@ body {
   z-index: 1;
 }
 
+/* Active state for the icon container */
 .icon-container.active {
   opacity: 1;
   right: 15%;
