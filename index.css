@@ -88,6 +88,30 @@ body {
 
   .content-list li {
     text-align: left;
+    position: relative; /* Make list items the reference for the icon-container */
+  }
+
+  /* Hide the original icon-container on small screens */
+  .icon-container {
+    display: none;
+  }
+
+  /* Create a new icon-container for small screens */
+  .content-list li .icon-container-small {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dark-text-color);
+    font-size: 1.2rem; /* Adjust the icon size to fit the list item height */
+    transition: opacity 0.3s ease;
+    margin-right: 2rem;
+  }
+
+  /* Show the new icon-container on hover */
+  .content-list li:hover .icon-container-small {
+    display: block;
   }
 }
 
